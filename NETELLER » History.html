@@ -1,0 +1,211 @@
+<!DOCTYPE html>
+<html lang="en" class="js flexbox flexboxlegacy canvas canvastext webgl no-touch geolocation postmessage websqldatabase indexeddb hashchange history draganddrop websockets rgba hsla multiplebgs backgroundsize borderimage borderradius boxshadow textshadow opacity cssanimations csscolumns cssgradients cssreflections csstransforms csstransforms3d csstransitions fontface generatedcontent video audio localstorage sessionstorage webworkers applicationcache svg inlinesvg smil svgclippaths">
+    <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=Edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=0">
+
+	<link rel="icon" href="../Track Donation Front/img/logoo.png" type="image/png">
+        <link rel="stylesheet" href="./NETELLER » History_files/bootstrap.css">
+        <link rel="stylesheet" href="./NETELLER » History_files/style.css">
+        <link rel="stylesheet" href="./NETELLER » History_files/font-awesome.min.css">
+        <link rel="stylesheet" href="./NETELLER » History_files/simpleLightbox.css">
+        <link rel="stylesheet" href="./NETELLER » History_files/nice-select.css">
+        <link rel="stylesheet" href="./NETELLER » History_files/style(1).css">
+        <link rel="stylesheet" href="./NETELLER » History_files/responsive.css">
+    	<link href="./NETELLER » History_files/css" rel="stylesheet" type="text/css">
+	<link href="./NETELLER » History_files/css(1)" rel="stylesheet" type="text/css">
+	<link rel="stylesheet" href="./NETELLER » History_files/common-e175b40fb24abb84a1b5aad332f0a337.css">
+<title>Transaction</title>
+
+<meta name="layout" content="authorized/history">
+
+    <style>
+        .unavailable { cursor: default;}
+                .img2 { margin-left: -90px; }
+.table-earning thead th   {
+    background: #a0db8e;
+    font-size: 16px;
+    color: #fff;
+    vertical-align: middle;
+    font-weight: 400;
+    text-transform: capitalize;
+    line-height: 1;
+    padding: 22px 20px;
+    white-space: nowrap;
+}
+borderless th, .table-borderless thead th {
+    border: 0;
+}
+        th {
+    text-align: inherit;
+
+}
+        td {
+    display: table-cell;
+    vertical-align: inherit;
+}
+
+    </style>
+
+   <script language="javascript">
+        function printdiv(printpage) {
+            var headstr = "<html><head><title></title></head><body>";
+            var footstr = "</body>";
+            var newstr = document.all.item(printpage).innerHTML;
+            var oldstr = document.body.innerHTML;
+            document.body.innerHTML = headstr + newstr + footstr;
+            window.print();
+            document.body.innerHTML = oldstr;
+            return false;
+        }
+    </script>
+
+</head>
+
+<body class="authenticated country-eg">
+
+    <header class="header_area">
+        <div class="main_menu">
+            <div class="container">
+                <nav class="navbar navbar-expand-lg navbar-light">
+                    <div class="container">
+                        <!-- Brand and toggle get grouped for better mobile display -->
+                        <a class="navbar-brand logo_h img2" href="index.html"><img src="./NETELLER » History_files/logo2.png" alt="" height="100"></a>
+                        <!-- Collect the nav links, forms, and other content for toggling -->
+                        <div class="collapse navbar-collapse offset" id="navbarSupportedContent">
+                            <ul class="nav navbar-nav menu_nav ml-auto">
+                                <li class="nav-item"><a class="nav-link" href="index.html" style="color: white">Home</a></li>
+                                <li class="nav-item"><a class="nav-link" href="about-us.html"style="color: white">About</a></li>
+                                <li class="nav-item active"><a class="nav-link" href="causes.html"style="color: white">Projects</a></li>
+                                </li><li class="nav-item"><a class="nav-link" href="landing-page-send.html"style="color: white">Send Money</a></li>
+                                </li><li class="nav-item active"><a class="nav-link" href="NETELLER%20%C2%BB%20History.html"style="color: white">Transactions</a></li>
+                               </li><li class="nav-item active"><a class="nav-link" href="events.html"style="color: white">events</a></li>
+                               <li class="nav-item active"><a class="nav-link" href="login/login.html"style="color: white">login</a></li>
+                            </ul>
+
+                    </li></ul></div>
+                </div></nav>
+            </div>
+        </div>
+    </header>
+
+		<div class="medium-9 columns">
+			<div id="main">
+		<div class="row" style="position:relative; left:200px; top:150px" ;="">
+            <div class="medium-12 columns">
+                <h3>Transaction history</h3>
+                 <div class="panel">
+                     <div class="medium-6 large-3 columns">
+                                     <div class="input-wrapper">
+                                         <label> ENTER YOUR ID :
+                                         <input id="idd" type="text" name="id"/>
+                                         </label>
+                                     </div>
+                                 </div>
+                          <div class="row end">
+
+                                 <div class="medium-6 large-3 columns">
+                    <button class="button input label-align" onclick="myFunction();">Apply</button>
+
+
+                                 </div>
+            <button name="b_print" type="button" class="button input label-align" onClick="printdiv('print');" value=" Print ">Print</button>
+
+
+                             </div>
+
+                     </div>
+
+                     <div class="remove-panel-padding end" id="print">
+                         <div id="fn-history_wrapper" class="dataTables_wrapper no-footer">
+                         <table id='myTable'class="table table-borderless table-striped table-earning" style="table-earning thead th">
+                                        <thead>
+                                            <tr>
+                                                <th>date</th>
+                                                <th>ID</th>
+                                                <th>name</th>
+                                           </tr>
+                                        </thead>
+                                        <tbody>
+
+                                        </tbody>
+                                    </table>
+                    </div>
+                </div>
+            </div>
+          </div>
+       </div>
+
+
+    </div>
+
+    <script type="text/javascript">
+        const sendHttpRequest=(method,url) => {
+        const promise= new Promise((reslove,reject) => {
+        const xhr= new XMLHttpRequest();
+          xhr.open(method,url);
+
+          xhr.responseType='json';
+
+          xhr.onload=()=> {
+            reslove(xhr.response);
+          };
+          xhr.send();
+        });
+
+      return promise;
+      };
+      async function getData(){
+      var	id = document.getElementById("idd").value;
+      const arr2= await sendHttpRequest('GET','http://localhost:3000/api/CreateSendMoney?filter=%7B%22where%22%3A%7B%22MId%22%3A%22'+id+'%22%7D%7D').then(responseData => {
+        return responseData;
+      });
+      const arr1= await sendHttpRequest('GET','http://localhost:3000/api/SendMoneyToMonFund?filter=%7B%22where%22%3A%7B%22MId%22%3A%22resource%3Aorg.block.track.net.SendMoney%23'+id+'%22%7D%7D').then(responseData => {
+        return responseData;
+      });
+      console.log(arr1);
+      console.log(arr2);
+      var table = document.getElementById("myTable");
+      for (var i = 1,j=0; i ,j< arr2.length; i++,j++) {
+
+      var row = table.insertRow(i);
+      var cell1 = row.insertCell(0);
+      var cell2=row.insertCell(1);
+      var cell3=row.insertCell(2);
+      var cell4=row.insertCell(3);
+      var cell5=row.insertCell(4);
+
+      cell1.innerHTML = arr2[j].MId;
+      cell2.innerHTML = arr2[j].Amount;
+      cell3.innerHTML = arr2[j].timestamp;
+      cell4.innerHTML = arr2[j].pledgeId;
+      cell5.innerHTML = arr1[j].transactionId;
+      }
+      var input, filter, table, tr, td, i, txtValue;
+    input = document.getElementById("idd");
+    filter = input.value.toUpperCase();
+    table = document.getElementById("myTable");
+    tr = table.getElementsByTagName("tr");
+
+    // Loop through all table rows, and hide those who don't match the search query
+    for (i = 0; i < tr.length; i++) {
+        td = tr[i].getElementsByTagName("td")[0];
+        if (td) {
+            txtValue = td.textContent || td.innerText;
+            if (txtValue.toUpperCase().indexOf(filter) > -1) {
+                tr[i].style.display = "";
+            } else {
+                tr[i].style.display = "none";
+            }
+        }
+    }
+      };
+function Apply()
+{
+getData();
+}
+   </script>
+    </body>
+
+</html>

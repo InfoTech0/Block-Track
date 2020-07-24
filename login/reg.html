@@ -1,0 +1,166 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Sign Up </title>
+
+    <!-- Font Icon -->
+    <link rel="stylesheet" href="fonts/material-icon/css/material-design-iconic-font.min.css">
+    <link rel="stylesheet" href="vendor/nouislider/nouislider.min.css">
+
+    <!-- Main css -->
+    <link rel="stylesheet" href="css/style.css">
+    
+</head>
+<body>
+
+
+    <div class="main">
+
+        <div class="container">
+            <div class="signup-content">
+                <div class="signup-img">
+                    <img src="images/form-img.jpg" alt="" >
+                    <div class="signup-img-content">
+                        <h2>Register now </h2>
+                        <p> Donate Now !</p>
+                    </div>
+                </div>
+                <div class="signup-form">
+                    <form  method="POST" action="../index.html" class="register-form" id="register-form">
+                        <div class="form-row">
+                            <div class="form-group">
+                                <div class="form-input">
+                                    <label for="first_name" class="required">First name</label>
+                                    <input  id="first_name"  type="text"
+                                    name="username"                                   
+                                    placeholder="Username"
+                                    pattern="[a-z]{4,15}"
+                                    title="Firstname should  contain  minimum 4  lowercase letters. e.g. john">
+                                </div>
+                                <div class="form-input">
+                                    <label for="last_name" class="required">Last name</label>
+                                    <input type="text" name="last_name" id="last_name" 
+                                    placeholder="lastname"
+                                    pattern="[a-z]{4,15}"
+                                    title="Lastname should contain minimum 4 lowercase letters. e.g. john"/>
+                                </div>
+
+                                <div class="form-input">
+                                    <label for="email" class="required">Email</label>
+                                    <input type="text" name="email" id="email" title=" Example: username@mail.domain" placeholder="User name" required pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,}$"/>
+                                </div>
+                                <div class="form-input">
+                                    <label for="Password" class="required">Password</label>
+                                    <input type="password" name="password" id="password"placeholder="Password" required pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{8,}" title="Must contain at least one  number and one uppercase and lowercase letter, and at least 8 or more characters" />
+                                </div>
+                                
+                            </div>
+                            <div class="form-group">
+                                <div class="form-select">
+                                    <div class="label-flex">
+                                        <label for="meal_preference" class="required">type Donation</label>
+                                        <a href="#" class="form-link">Donation detail</a>
+                                    </div>
+                                    <div class="select-list">
+                                        <select name="meal_preference" id="meal_preference" >
+                                            <option value="One-time donation">One-time donation</option>
+                                            <option value="Monthly donation">Monthly donation</option>
+                                            <option value="Weekly donation">Weekly donation</option>
+                                            <option value="Semiannaly donation">Semiannaly donation</option>
+                                            <option value="Annualy donation">Annualy donation</option>
+                                        </select>
+                                    </div>
+                                </div>
+                               
+                                
+
+                                <div class="form-input">
+                                    <label for="Creditcardno" class="required">Creditcard NO </label>
+                                    <input type="text"  name="Creditcardno" id="Creditcardno" pattern="[0-9]{4}-[0-9]{4}-[0-9]{4}-[0-9]{4}" title="your credit no must be in this form 1234-4567-1230-7896"/>
+                                </div>
+                                <div class="form-input">
+                                    <label for="phone_number" class="required">Phone number</label>
+                                    <input type="tel" name="phone_number" id="phone_number" pattern="[0-9]{3}-[0-9]{3}-[0-9]{4}"  title="your phone must in this form 123-456-7890"/>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="donate-us">
+                            <label>Donate us</label>
+                            <div class="price_slider ui-slider ui-slider-horizontal">
+                                <div id="slider-margin"></div>
+                                <span class="donate-value" id="value-lower"></span>
+                            </div>
+                        </div>
+                        <div class="form-submit">
+                                 <input type="submit" value="Submit" onclick="myFunction()" class="submit" id="submit" name="submit"/>
+                            <input type="submit" value="Reset" class="submit" id="reset" name="reset" />
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+
+    </div>
+
+    <!-- JS -->
+    <script src="vendor/jquery/jquery.min.js"></script>
+    <script src="vendor/nouislider/nouislider.min.js"></script>
+    <script src="vendor/wnumb/wNumb.js"></script>
+    <script src="vendor/jquery-validation/dist/jquery.validate.min.js"></script>
+    <script src="vendor/jquery-validation/dist/additional-methods.min.js"></script>
+    <script src="js/main2.js"></script>
+    <script>
+    function makeid(length) {
+   var result           = '';
+   var characters       = 'ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789';
+   var charactersLength = characters.length;
+   for ( var i = 0; i < length; i++ ) {
+      result += characters.charAt(Math.floor(Math.random() * charactersLength));
+   }
+   return result;
+}
+    var Gc=(makeid(5));
+
+    function myFunction() {
+      var fn = document.getElementById("first_name").value;
+      var ln = document.getElementById("last_name").value;
+      var Em = document.getElementById("email").value;
+      var pn = document.getElementById("phone_number").value;
+      var cno = document.getElementById("Creditcardno").value;
+      var pno = document.getElementById("PayPalno").value;
+      var xhr = new XMLHttpRequest();
+
+      xhr.open("POST", 'http://localhost:3000/api/GlobalCitizen', true);
+
+      //Send the proper header information along with the request
+      xhr.setRequestHeader("Content-Type", "application/JSON");
+
+      xhr.onreadystatechange = function() { // Call a function when the state changes.
+          if (this.readyState === XMLHttpRequest.DONE && this.status === 200) {
+              // Request finished. Do processing here.
+
+          }
+      }
+      var x={
+        "$class": "org.global.citizens.net.GlobalCitizen",
+        "citizenId": Gc,
+        "Fname": fn,
+        "Lname": ln,
+        "email": Em,
+        "PhoneNo": pn,
+        "fundingType": "WEEKLY",
+        "paymentInformation": "CreditCard",
+        "creditCardNo": cno,
+        "projectPledge": [
+          "P1"
+        ]
+      };
+      var myJSON = JSON.stringify(x);
+      xhr.send(myJSON);
+         }
+    </script>
+</body>
+</html>
