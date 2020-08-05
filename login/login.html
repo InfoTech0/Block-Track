@@ -83,6 +83,7 @@
     <!-- JS -->
     <script src="vendor/jquery/jquery1.min.js"></script>
     <script src="js/login.js"></script>
+<<<<<<< HEAD
     <script type="text/javascript">
         function getpassword() {
           var Email=document.getElementById("email").value;
@@ -114,5 +115,38 @@
            xhr.send();
          }
    </script>
+=======
+        <script type="text/javascript">
+            function getpassword() {
+              var Email=document.getElementById("email").value;
+              var url1 = "http://localhost:3000/api/Doner/"+Email
+                const xhr = new XMLHttpRequest(),
+                   method = "GET",
+                   url=url1;
+                   ;
+
+               xhr.open(method, url, true);
+               xhr.onreadystatechange = function () {
+                 // In local files, status is 0 upon success in Mozilla Firefox
+                 if(xhr.readyState === XMLHttpRequest.DONE) {
+                   var data=JSON.parse(xhr.responseText);
+                     var x =data.password;
+                     var string1=document.getElementById("pass").value;
+                     var result=string1.localeCompare(x);
+                     if(result==false)
+                     {
+                       console.log("Success");
+                       location.replace("file:///home/mo2a/Desktop/Project/Block-Track/index.html","_self");
+                     }
+                     else {
+                       alert("Email or Password invalid");
+                     }
+
+                   }
+                 };
+               xhr.send();
+             }
+       </script>
+>>>>>>> ea86972fae717b0b3d3272fd9d5f534fcb93c0e0
 </body>
 </html>
