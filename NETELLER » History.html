@@ -22,7 +22,7 @@
 
     <style>
         .unavailable { cursor: default;}
-                .img2 { margin-left: -90px; }
+                .img2 { margin-left: -90px; max-width: 245px;}
 .table-earning thead th   {
     background: #a0db8e;
     font-size: 16px;
@@ -119,12 +119,14 @@ borderless th, .table-borderless thead th {
 
                      <div class="remove-panel-padding end" id="print">
                          <div id="fn-history_wrapper" class="dataTables_wrapper no-footer">
-                         <table id='myTable'class="table table-borderless table-striped table-earning" style="table-earning thead th">
+                         <table id='myTable'class="table table-borderless table-striped table-earning" >
                                         <thead>
                                             <tr>
-                                                <th>date</th>
-                                                <th>ID</th>
-                                                <th>name</th>
+                                                <th>moneyid</th>
+                                                <th>Date</th>
+                                                <th>pledgeId</th>
+                                                <th>TransactionId</th>
+
                                            </tr>
                                         </thead>
                                         <tbody>
@@ -133,6 +135,26 @@ borderless th, .table-borderless thead th {
                                     </table>
                     </div>
                 </div>
+                <br>
+                <br>
+                <div class="remove-panel-padding end" id="print">
+                    <div id="fn-history_wrapper" class="dataTables_wrapper no-footer">
+                    <table id='myTable'class="table table-borderless table-striped table-earning" >
+                                   <thead>
+                                       <tr>
+                                           <th>Name</th>
+                                           <th>Participant</th>
+                                           <th>Date</th>
+                                           <th>TransactionId</th>
+
+                                      </tr>
+                                   </thead>
+                                   <tbody>
+
+                                   </tbody>
+                               </table>
+               </div>
+           </div>
             </div>
           </div>
        </div>

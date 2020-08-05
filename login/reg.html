@@ -87,13 +87,9 @@
                                 </div>
                             </div>
                         </div>
-                        <div class="donate-us">
-                            <label>Donate us</label>
-                            <div class="price_slider ui-slider ui-slider-horizontal">
-                                <div id="slider-margin"></div>
-                                <span class="donate-value" id="value-lower"></span>
-                            </div>
-                        </div>
+                      <br>
+                    
+                    
                         <div class="form-submit">
                                  <input type="submit" value="Submit" onclick="myFunction()" class="submit" id="submit" name="submit"/>
                             <input type="submit" value="Reset" class="submit" id="reset" name="reset" />
@@ -113,54 +109,43 @@
     <script src="vendor/jquery-validation/dist/additional-methods.min.js"></script>
     <script src="js/main2.js"></script>
     <script>
-    function makeid(length) {
-   var result           = '';
-   var characters       = 'ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789';
-   var charactersLength = characters.length;
-   for ( var i = 0; i < length; i++ ) {
-      result += characters.charAt(Math.floor(Math.random() * charactersLength));
-   }
-   return result;
-}
-    var Gc=(makeid(5));
-
     function myFunction() {
-      var fn = document.getElementById("first_name").value;
-      var ln = document.getElementById("last_name").value;
-      var Em = document.getElementById("email").value;
-      var pn = document.getElementById("phone_number").value;
-      var cno = document.getElementById("Creditcardno").value;
-      var pno = document.getElementById("PayPalno").value;
-      var xhr = new XMLHttpRequest();
+          var fn = document.getElementById("first_name").value;
+          var ln = document.getElementById("last_name").value;
+          var Em = document.getElementById("email").value;
+          var pn = document.getElementById("phone_number").value;
+          var cno = document.getElementById("Creditcardno").value;
+          var Pass = document.getElementById("password").value;
+          var xhr = new XMLHttpRequest();
 
-      xhr.open("POST", 'http://localhost:3000/api/GlobalCitizen', true);
+          xhr.open("POST", 'http://localhost:3000/api/Doner', true);
 
-      //Send the proper header information along with the request
-      xhr.setRequestHeader("Content-Type", "application/JSON");
+          //Send the proper header information along with the request
+          xhr.setRequestHeader("Content-Type", "application/JSON");
 
-      xhr.onreadystatechange = function() { // Call a function when the state changes.
-          if (this.readyState === XMLHttpRequest.DONE && this.status === 200) {
-              // Request finished. Do processing here.
+          xhr.onreadystatechange = function() { // Call a function when the state changes.
+              if (this.readyState === XMLHttpRequest.DONE && this.status === 200) {
+                  // Request finished. Do processing here.
 
-          }
+              }
       }
       var x={
-        "$class": "org.global.citizens.net.GlobalCitizen",
-        "citizenId": Gc,
-        "Fname": fn,
-        "Lname": ln,
-        "email": Em,
-        "PhoneNo": pn,
-        "fundingType": "WEEKLY",
-        "paymentInformation": "CreditCard",
-        "creditCardNo": cno,
-        "projectPledge": [
-          "P1"
-        ]
-      };
-      var myJSON = JSON.stringify(x);
-      xhr.send(myJSON);
-         }
-    </script>
+                      "$class": "org.block.track.net.Doner",
+                      "Fname": fn,
+                      "Lname": ln,
+                      "email": Em,
+                      "PhoneNo":pn,
+                      "password": Pass,
+                      "fundingType": "WEEKLY",
+                      "paymentInformation": "CreditCard",
+                      "creditCardNo": cno,
+                      "sendMoney": [
+                        "resource:org.block.track.net.SendMoney#m1"
+                      ]
+                    };
+          var myJSON = JSON.stringify(x);
+          xhr.send(myJSON);
+             }
+        </script>
 </body>
 </html>

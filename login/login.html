@@ -22,7 +22,7 @@
         <link rel="stylesheet" href="../css/style.css">
         <link rel="stylesheet" href="../css/responsive.css">
         <style>
-        .img2 { margin-left: -90px; }
+        .img2 { margin-left: -90px; max-width: 245px; }
   </style>
 </head>
 <body>
@@ -31,25 +31,12 @@
             <div class="container">
                 <nav class="navbar navbar-expand-lg navbar-light">
                     <div class="container">
-                        <!-- Brand and toggle get grouped for better mobile display -->
-                        <a class="navbar-brand logo_h img2" href="../index.html"><img src="../img/logo2.png" alt=""  height="100"></a>
+                        <a class="navbar-brand logo_h img2" href="../index.html"><img src="../img/logo2.png" alt="" ></a>
                         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
                             <span class="icon-bar"></span>
                             <span class="icon-bar"></span>
                             <span class="icon-bar"></span>
-                        </button>
-                        <!-- Collect the nav links, forms, and other content for toggling -->
-                        <div class="collapse navbar-collapse offset" id="navbarSupportedContent">
-                            <ul class="nav navbar-nav menu_nav ml-auto">
-                                <li class="nav-item"><a class="nav-link" href="../index.html"style="color: white">Home</a></li> 
-                                <li class="nav-item"><a class="nav-link" href="../about-us.html"style="color: white">About</a></li> 
-                                <li class="nav-item active" ><a  class="nav-link" href="../causes.html"style="color: white">Causes</a>
-                                <li class="nav-item"><a class="nav-link" href="../landing-page-send.html"style="color: white">Send Money</a>
-                                <li class="nav-item active"><a class="nav-link" href="../NETELLER » History.html"style="color: white">Transactions</a>
-                             <li class="nav-item active"><a class="nav-link" href="../events.html"style="color: white">events</a>
-                           <li class="nav-item active"><a class="nav-link" href="login.html"style="color: white">login</a>
-
-                    </div>
+                        </button>                       
                 </nav>
             </div>
         </div>
@@ -67,21 +54,21 @@
 
     <div class="main">
 
-        <section class="signup">
-            <div class="container" style="" >
-                <div class="signup-content" style="height: 50%px;  width: 50%;  ">
+        <section class="signup " style=" margin:auto ; max-width: 550px;">
+            <div class="container"  >
+                <div class="signup-content" >
                     <form method="POST" id="signup-form" class="signup-form">
                         <h2 class="form-title">login</h2>
                         <div class="form-group">
-                            <input type="text" class="form-input" name="email" title="Example: username@mail.domain" placeholder="User name" required pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,}$"/>
+                            <input type="text" class="form-input" name="email" id="email" title="Example: username@mail.domain" placeholder="User name" required pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,}$"/>
                         </div>
                         <div class="form-group">
-                            <input type="text" class="form-input" name="password" id="mod" placeholder="Password" required pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{8,}" title="Must contain at least one  number and one uppercase and lowercase letter, and at least 8 or more characters"/>
+                            <input type="text" class="form-input" name="password" id="pass" placeholder="Password" required pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{8,}" title="Must contain at least one  number and one uppercase and lowercase letter, and at least 8 or more characters"/>
                         </div>
                      
                       
                         <div class="form-group">
-                            <input type="submit" name="submit" id="submit" class="form-submit" value="login"/>
+                            <input type="button" name="submit" onclick="getpassword();" id="submit" class="form-submit" value="login"/>
                         </div>
                     </form>
                     <p class="loginhere">
@@ -96,5 +83,36 @@
     <!-- JS -->
     <script src="vendor/jquery/jquery1.min.js"></script>
     <script src="js/login.js"></script>
+    <script type="text/javascript">
+        function getpassword() {
+          var Email=document.getElementById("email").value;
+          var url1 = "http://localhost:3000/api/Doner/"+Email
+            const xhr = new XMLHttpRequest(),
+               method = "GET",
+               url=url1;
+               ;
+
+           xhr.open(method, url, true);
+           xhr.onreadystatechange = function () {
+             // In local files, status is 0 upon success in Mozilla Firefox
+             if(xhr.readyState === XMLHttpRequest.DONE) {
+               var data=JSON.parse(xhr.responseText);
+                 var x =data.password;
+                 var string1=document.getElementById("pass").value;
+                 var result=string1.localeCompare(x);
+                 if(result==false)
+                 {
+                   console.log("Success");
+                   location.replace("file:///home/mo2a/Desktop/Project/Block-Track/index.html","_self");
+                 }
+                 else {
+                   alert("Email or Password invalid");
+                 }
+
+               }
+             };
+           xhr.send();
+         }
+   </script>
 </body>
 </html>
