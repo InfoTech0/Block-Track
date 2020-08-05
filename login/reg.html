@@ -109,11 +109,7 @@
     <script src="vendor/jquery-validation/dist/additional-methods.min.js"></script>
     <script src="js/main2.js"></script>
     <script>
-<<<<<<< HEAD
-    function myFunction() {
-=======
-        function myFunction() {
->>>>>>> ea86972fae717b0b3d3272fd9d5f534fcb93c0e0
+ function myFunction() {
           var fn = document.getElementById("first_name").value;
           var ln = document.getElementById("last_name").value;
           var Em = document.getElementById("email").value;
@@ -121,7 +117,6 @@
           var cno = document.getElementById("Creditcardno").value;
           var Pass = document.getElementById("password").value;
           var xhr = new XMLHttpRequest();
-<<<<<<< HEAD
 
           xhr.open("POST", 'http://localhost:3000/api/Doner', true);
 
@@ -133,23 +128,7 @@
                   // Request finished. Do processing here.
 
               }
-      }
-      var x={
-=======
-    
-          xhr.open("POST", 'http://localhost:3000/api/Doner', true);
-    
-          //Send the proper header information along with the request
-          xhr.setRequestHeader("Content-Type", "application/JSON");
-    
-          xhr.onreadystatechange = function() { // Call a function when the state changes.
-              if (this.readyState === XMLHttpRequest.DONE && this.status === 200) {
-                  // Request finished. Do processing here.
-    
-              }
-          }
-          var x={
->>>>>>> ea86972fae717b0b3d3272fd9d5f534fcb93c0e0
+               var x={
                       "$class": "org.block.track.net.Doner",
                       "Fname": fn,
                       "Lname": ln,
