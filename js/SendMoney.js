@@ -13,6 +13,7 @@ function makeid(length) {
       function createasset() {
         var Pid = document.getElementById("project").value;
         var mo = document.getElementById("money").value;
+        var email=localStorage.getItem('Email');
         var xhr = new XMLHttpRequest();
 
         xhr.open("POST", 'http://localhost:3000/api/CreateSendMoney', true);
@@ -22,8 +23,8 @@ function makeid(length) {
 
         xhr.onreadystatechange = function() { // Call a function when the state changes.
             if (this.readyState === XMLHttpRequest.DONE && this.status === 200) {
-                console.log("Create Send Money Success "+this.status);
-                console.log(Mid);
+              console.log("First Success");
+
             }
         }
         var x=
@@ -32,7 +33,7 @@ function makeid(length) {
           "MId": Mid,
           "Amount": mo,
           "pledgeId": Pid,
-          "Doner": "ali@yahoo.com"
+          "Doner": email
         };
         var myJSON = JSON.stringify(x);
         xhr.send(myJSON);
@@ -43,7 +44,6 @@ function makeid(length) {
              var x="resource:org.block.track.net.SendMoney#";
              var y=Mid;
              var MoneyId=x+Mid;
-             console.log(MoneyId);
              var xhr = new XMLHttpRequest();
 
              xhr.open("POST", 'http://localhost:3000/api/SendMoneyToMonFund', true);
@@ -53,7 +53,7 @@ function makeid(length) {
 
              xhr.onreadystatechange = function() { // Call a function when the state changes.
                  if (this.readyState === XMLHttpRequest.DONE && this.status === 200) {
-                     console.log(this.status);
+                     alert("Send Money Success");
                  }
              }
              var x=
@@ -61,7 +61,7 @@ function makeid(length) {
                "$class": "org.block.track.net.SendMoneyToMonFund",
                "MId": MoneyId,
                "Amount": mo,
-               "MonFundId": "mf1"
+               "MonFundId": "MF1"
              };
              var myJSON = JSON.stringify(x);
              xhr.send(myJSON);
