@@ -8,7 +8,6 @@ function makeid(length) {
       return result;
       }
       var Mid=(makeid(2));
-      console.log(Mid);
 
       function createasset() {
         var Pid = document.getElementById("project").value;

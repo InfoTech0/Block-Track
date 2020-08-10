@@ -2,7 +2,6 @@ function SignUp() {
           var fn = document.getElementById("first_name").value;
           var ln = document.getElementById("last_name").value;
           var Em = document.getElementById("email").value.toLowerCase();
-          console.log(Em);
           var pn = document.getElementById("phone_number").value;
           var cno = document.getElementById("Creditcardno").value;
           var Pass = document.getElementById("password").value;
@@ -20,6 +19,9 @@ function SignUp() {
               if (this.readyState === XMLHttpRequest.DONE && this.status === 200) {
                 alert("Registration Success");
                 location.replace("./login.html");
+              }
+              else {
+                  alert("Registration failed please try again")
               }
             }
                var x={
