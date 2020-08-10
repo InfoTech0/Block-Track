@@ -20,9 +20,6 @@ function SignUp() {
                 alert("Registration Success");
                 location.replace("./login.html");
               }
-              else {
-                  alert("Registration failed please try again")
-              }
             }
                var x={
                       "$class": "org.block.track.net.Doner",

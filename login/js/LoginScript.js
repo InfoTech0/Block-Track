@@ -29,9 +29,6 @@
                      }
                    }
                  }
-                   else{
-                       alert("Login failed please try again");
-                   }
                  };
                xhr.send();
              }
