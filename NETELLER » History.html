@@ -74,17 +74,16 @@ borderless th, .table-borderless thead th {
                         <a class="navbar-brand logo_h img2" href="index.html"><img src="./NETELLER » History_files/logo2.png" alt="" height="100"></a>
                         <!-- Collect the nav links, forms, and other content for toggling -->
                         <div class="collapse navbar-collapse offset" id="navbarSupportedContent">
-                            <ul class="nav navbar-nav menu_nav ml-auto">
-                                <li class="nav-item"><a class="nav-link" href="index.html" style="color: white">Home</a></li>
-                                <li class="nav-item"><a class="nav-link" href="about-us.html"style="color: white">About</a></li>
-                                <li class="nav-item active"><a class="nav-link" href="causes.html"style="color: white">Projects</a></li>
-                                </li><li class="nav-item"><a class="nav-link" href="landing-page-send.html"style="color: white">Send Money</a></li>
-                                </li><li class="nav-item active"><a class="nav-link" href="NETELLER%20%C2%BB%20History.html"style="color: white">Transactions</a></li>
-                               </li><li class="nav-item active"><a class="nav-link" href="events.html"style="color: white">events</a></li>
-                               <li class="nav-item active"><a class="nav-link" href="login/login.html"style="color: white">login</a></li>
-                            </ul>
-
-                    </li></ul></div>
+                          <ul class="nav navbar-nav menu_nav ml-auto">
+                              <li class="nav-item"><a class="nav-link" href="index.html"style="color: white">Home</a></li>
+                              <li class="nav-item"><a class="nav-link" href="about-us.html"style="color: white">About</a></li>
+                              <li class="nav-item active"><a class="nav-link" href="javascript:Project();" style="color: white">Projects</a>
+                              <li class="nav-item"><a class="nav-link" href="javascript:Money();"style="color: white">Send Money</a>
+                              <li class="nav-item active"><a class="nav-link" href="javascript:Transaction();" style="color: white">Transactions</a>
+                              <li class="nav-item active"><a class="nav-link" href="javascript:Events();" style="color: white">events</a>
+                              <li class="nav-item active" ><a id='login' class="nav-link" href="javascript:RemoveEmail();"style="color: white">login</a>
+                          </ul>
+                        </div>
                 </div></nav>
             </div>
         </div>
@@ -94,7 +93,7 @@ borderless th, .table-borderless thead th {
 			<div id="main">
 		<div class="row" style="position:relative; left:200px; top:150px" ;="">
             <div class="medium-12 columns">
-                <h3>Transaction history</h3>
+                <h4 style="color:white;">Transaction Report</h4>
                  <div class="panel">
                      <div class="medium-6 large-3 columns">
                                      <div class="input-wrapper">
@@ -121,13 +120,13 @@ borderless th, .table-borderless thead th {
                          <div id="fn-history_wrapper" class="dataTables_wrapper no-footer">
                          <table id='myTable'class="table table-borderless table-striped table-earning" >
                                         <thead>
-                                            <tr>
-                                                <th>Moneyid</th>
+                                          <center>  <tr>
+                                                <th>MoneyID</th>
                                                 <th>Amount</th>
                                                 <th>Date</th>
-                                                <th>ProjectId</th>
-                                                <th>TransactionId</th>
-                                           </tr>
+                                                <th>ProjectID</th>
+                                              <th>TransactionID</th>
+                                           </tr></center>
                                         </thead>
                                         <tbody>
 
@@ -137,14 +136,12 @@ borderless th, .table-borderless thead th {
                 </div>
                 <br>
                 <br>
-    
+
             </div>
           </div>
        </div>
-
-
     </div>
-
+    <script src="js/CheckLogin.js"></script>
     <script type="text/javascript" src="js/Transactions.js"></script>
     </body>
 
