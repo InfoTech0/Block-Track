@@ -1,6 +1,7 @@
+var IP=localStorage.getItem("IP");
 const xhr = new XMLHttpRequest(),
            method = "GET",
-           url = "http://localhost:3000/api/ProjectPledge";
+           url = "http://"+IP+":3000/api/ProjectPledge";
 
        xhr.open(method, url, true);
        xhr.onreadystatechange = function () {

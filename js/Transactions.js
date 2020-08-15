@@ -1,10 +1,11 @@
+        var IP=localStorage.getItem("IP");
         var data; var  data1;
         function getData(){
         var	email = document.getElementById("Email").value.toLowerCase();
         var filter=encodeURIComponent("resource:org.block.track.net.Doner#"+email);
         const xhr = new XMLHttpRequest(),
            method = "GET",
-           url = 'http://localhost:3000/api/CreateSendMoney?filter=%7B%22where%22%3A%7B%22Doner%22%3A%22'+filter+'%22%7D%7D';
+           url = 'http://'+IP+':3000/api/CreateSendMoney?filter=%7B%22where%22%3A%7B%22Doner%22%3A%22'+filter+'%22%7D%7D';
 
         xhr.open(method, url, true);
         xhr.onreadystatechange = function () {
@@ -25,7 +26,7 @@ function getData2(data){
     var id=data[i].MId;
     const xhr = new XMLHttpRequest(),
        method = "GET",
-       url = 'http://localhost:3000/api/SendMoneyToMonFund?filter=%7B%22where%22%3A%7B%22MId%22%3A%22resource%3Aorg.block.track.net.SendMoney%23'+id+'%22%7D%7D';
+       url = 'http://'+IP+':3000/api/SendMoneyToMonFund?filter=%7B%22where%22%3A%7B%22MId%22%3A%22resource%3Aorg.block.track.net.SendMoney%23'+id+'%22%7D%7D';
 
     xhr.open(method, url, true);
     xhr.onreadystatechange = function () {

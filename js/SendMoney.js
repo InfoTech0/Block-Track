@@ -1,3 +1,4 @@
+var IP=localStorage.getItem("IP");
 function makeid(length) {
       var result           = '';
       var characters       = '0123456789';
@@ -8,14 +9,14 @@ function makeid(length) {
       return result;
       }
       var Mid=(makeid(2));
-
+      console.log(Mid);
       function createasset() {
         var Pid = document.getElementById("project").value;
         var mo = document.getElementById("money").value;
         var email=localStorage.getItem('Email');
         var xhr = new XMLHttpRequest();
 
-        xhr.open("POST", 'http://localhost:3000/api/CreateSendMoney', true);
+        xhr.open("POST", 'http://'+IP+':3000/api/CreateSendMoney', true);
 
         //Send the proper header information along with the request
         xhr.setRequestHeader("Content-Type", "application/JSON");
@@ -23,7 +24,7 @@ function makeid(length) {
         xhr.onreadystatechange = function() { // Call a function when the state changes.
             if (this.readyState === XMLHttpRequest.DONE && this.status === 200) {
               console.log("First Success");
-
+              alert("MoneyID Is: "+Mid);
             }
         }
         var x=
@@ -45,7 +46,7 @@ function makeid(length) {
              var MoneyId=x+Mid;
              var xhr = new XMLHttpRequest();
 
-             xhr.open("POST", 'http://localhost:3000/api/SendMoneyToMonFund', true);
+             xhr.open("POST", 'http://'+IP+':3000/api/SendMoneyToMonFund', true);
 
              //Send the proper header information along with the request
              xhr.setRequestHeader("Content-Type", "application/JSON");

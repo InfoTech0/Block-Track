@@ -1,3 +1,4 @@
+var IP=localStorage.getItem("IP");
 function SignUp() {
           var fn = document.getElementById("first_name").value;
           var ln = document.getElementById("last_name").value;
@@ -10,7 +11,7 @@ function SignUp() {
           var fundtype=option.replace(' donation','').toUpperCase();
           var xhr = new XMLHttpRequest();
 
-          xhr.open("POST", 'http://localhost:3000/api/Doner', true);
+          xhr.open("POST", 'http://'+IP+':3000/api/Doner', true);
 
           //Send the proper header information along with the request
           xhr.setRequestHeader("Content-Type", "application/JSON");

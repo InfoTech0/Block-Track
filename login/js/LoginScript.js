@@ -1,6 +1,7 @@
+var IP=localStorage.getItem("IP");
 	   function getpassword() {
               var Email=encodeURIComponent(document.getElementById("email").value).toLowerCase();
-              var url1 = "http://localhost:3000/api/Doner?filter=%7B%22where%22%3A%7B%22email%22%3A%22"+Email+"%22%7D%7D"
+							var url1 = "http://"+IP+":3000/api/Doner?filter=%7B%22where%22%3A%7B%22email%22%3A%22"+Email+"%22%7D%7D"
                 const xhr = new XMLHttpRequest(),
                    method = "GET",
                    url=url1;
