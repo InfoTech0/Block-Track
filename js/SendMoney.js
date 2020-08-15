@@ -23,8 +23,11 @@ function makeid(length) {
 
         xhr.onreadystatechange = function() { // Call a function when the state changes.
             if (this.readyState === XMLHttpRequest.DONE && this.status === 200) {
-              console.log("First Success");
               alert("MoneyID Is: "+Mid);
+              SendMoney();
+            }
+            else if (this.readyState === XMLHttpRequest.DONE && this.status === 500) {
+              alert("Check Project ID and Try Again");
             }
         }
         var x=
@@ -53,7 +56,10 @@ function makeid(length) {
 
              xhr.onreadystatechange = function() { // Call a function when the state changes.
                  if (this.readyState === XMLHttpRequest.DONE && this.status === 200) {
-                     alert("Send Money Success");
+                     alert("Transaction Success");
+                 }
+                 else if (this.readyState === XMLHttpRequest.DONE && this.status === 500) {
+                   SendMoney();
                  }
              }
              var x=
