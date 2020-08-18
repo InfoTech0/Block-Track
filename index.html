@@ -18,16 +18,16 @@
         <style>
         .img2 { margin-left: -90px; }
     footer {
-    
+
     height: 200px;
 
 
 }
-            
+
         </style>
     </head>
 <body>
-        
+
 	<!--================ Start Header Menu Area =================-->
 	<header class="header_area">
         <div class="main_menu">
@@ -44,22 +44,21 @@
                         <!-- Collect the nav links, forms, and other content for toggling -->
                         <div class="collapse navbar-collapse offset" id="navbarSupportedContent">
                             <ul class="nav navbar-nav menu_nav ml-auto">
-                                <li class="nav-item"><a class="nav-link" href="index.html"style="color: white">Home</a></li> 
-                                <li class="nav-item"><a class="nav-link" href="about-us.html"style="color: white">About</a></li> 
-                                <li class="nav-item active"><a class="nav-link" href="causes.html"style="color: white">Projects</a>
-                                <li class="nav-item"><a class="nav-link" href="landing-page-send.html"style="color: white">Send Money</a>
-                                <li class="nav-item active"><a class="nav-link" href="NETELLER » History.html"style="color: white">Transactions</a>
-                                <li class="nav-item active"><a class="nav-link" href="events.html"style="color: white">events</a>
-                                <li class="nav-item active"><a class="nav-link" href="login/login.html"style="color: white">login</a>
-
-
-                    </div>
+                                <li class="nav-item"><a class="nav-link" href="index.html"style="color: white">Home</a></li>
+                                <li class="nav-item"><a class="nav-link" href="about-us.html"style="color: white">About</a></li>
+                                <li class="nav-item active"><a class="nav-link" href="javascript:Project();" style="color: white">Projects</a>
+                                <li class="nav-item"><a class="nav-link" href="javascript:Money();"style="color: white">Send Money</a>
+                                <li class="nav-item active"><a class="nav-link" href="javascript:Transaction();" style="color: white">Transactions</a>
+                                <li class="nav-item active"><a class="nav-link" href="javascript:Events();" style="color: white">events</a>
+                                <li class="nav-item active" ><a id='login' class="nav-link" href="javascript:RemoveEmail();"style="color: white">login</a>
+                            </ul>
+                        </div>
                 </nav>
             </div>
         </div>
     </header>
 	<!--================ End Header Menu Area =================-->
-	
+
 	<!--================ Home Banner Area =================-->
 	<section class="home_banner_area" data-background=""  style="background-image: linear-gradient(rgba(0,0,0,.5),rgba(0,0,0,.5)), url('img/banner/7.jpg');">
 		<div class="banner_inner"  >
@@ -67,14 +66,14 @@
 				<div class="banner_content">
 					<p class="upper_text">Give a hand</p>
 					<h2>There is no exercise better for the heart than reaching down and lifting people up</h2>
-					<a class="primary_btn mr-20" href="landing-page-send.html">Donate Now</a>
-					<a class="primary_btn yellow_btn text-white" href="causes.html">See Projects</a>
+					<a class="primary_btn mr-20" href="javascript:Money();">Donate Now</a>
+					<a class="primary_btn yellow_btn text-white" href="javascript:Project();">See Projects</a>
 				</div>
 			</div>
 		</div>
 	</section>
 	<!--================ End Home Banner Area =================-->
-	
+
 	<!--================ Start Causes Area =================-->
 	<section class="causes_area">
 		<div class="container">
@@ -109,13 +108,13 @@ The network is decentralized meaning it doesn’t have any governing authority o
             </div>
         </div>
     </section>
-	
+
 	<!--================ End Causes Area =================-->
 
-	
+
 
 	<!--================ Start Features Cause section =================-->
-	<section class="features_causes">
+  <section class="features_causes">
         <div class="container">
             <div class="main_title">
                 <h2>How to save lifes ? </h2>
@@ -126,44 +125,42 @@ The network is decentralized meaning it doesn’t have any governing authority o
                     <div class="card">
                         <div class="card-body">
                             <figure>
-                                <img class="card-img-top img-fluid" src="img/features/fc1.jpg" alt="Card image cap">
+                                <img class="card-img-top img-fluid" id="edu" src="img/features/fc1.jpg" alt="Card image cap">
                             </figure>
                             <div class="card_inner_body">
-                                <h4 class="card-title">Education for every child</h4>
-                                <p class="card-text">
-Education is the route out of poverty for many children. It gives them a chance to gain the knowledge and skills needed to improve their lives. But millions of children never see the inside of a classroom.                                </p>
+                                <h4 class="card-title" id="edu1"></h4>
+                                <b><p class="card-text" id="edu5"></p></b>
+                                <p class="card-text" id="edu2"></p>
                                 <div class="d-flex justify-content-between raised_goal">
-                                    <p>Raised: $1533</p>
-                                    <p><span>Goal: $2500</span></p>
+                                    <p id="edu4">Raised: $1500</p>
+                                    <p><span id="edu3"></span></p>
                                 </div>
                                 <div class="d-flex justify-content-between donation align-items-center">
-                                    <a href="#" class="primary_btn">donate</a>
-                                    <p><span class="lnr lnr-heart"></span> 90 Donors</p>
+                                    <a href="javascript:Money();" class="primary_btn">donate</a>
+                                    <p><span class="lnr lnr-heart"></span> 55 Donors</p>
                                 </div>
-                                
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-lg-4 col-md-6">
-                    <div class="card">
-                        <div class="card-body">
-                            <figure>
-                                <img class="card-img-top img-fluid" src="img/features/fc2.jpg" alt="Card image cap">
-                            </figure>
-                            <div class="card_inner_body">
-                                <h4 class="card-title">Feeding the hungry people</h4>
-                                <p class="card-text">
-There are many things you can do to make a difference, and right now is the perfect time to start. From purging your cupboards to buying imperfect produce, each simple act supports ways to reduce an unnecessary epidemic we can work together to resolve.
 
-                                </p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-4 col-md-6">
+                    <div class="card">
+                        <div class="card-body">
+                            <figure>
+                                <img class="card-img-top img-fluid" id="feed" src="img/features/fc2.jpg" alt="Card image cap">
+                            </figure>
+                            <div class="card_inner_body">
+                                <h4 class="card-title" id="feed1"></h4>
+                                 <b><p class="card-text" id="feed5"></p></b>
+                                <p class="card-text" id="feed2"></p>
                                 <div class="d-flex justify-content-between raised_goal">
-                                    <p>Raised: $1533</p>
-                                    <p><span>Goal: $2500</span></p>
+                                    <p id="feed3">Raised: $5000</p>
+                                    <p><span id="feed4"></span></p>
                                 </div>
                                 <div class="d-flex justify-content-between donation align-items-center">
-                                    <a href="#" class="primary_btn">donate</a>
-                                    <p><span class="lnr lnr-heart"></span> 90 Donors</p>
+                                    <a href="javascript:Money();" class="primary_btn">donate</a>
+                                    <p><span class="lnr lnr-heart"></span> 25 Donors</p>
                                 </div>
                             </div>
                         </div>
@@ -173,24 +170,25 @@ There are many things you can do to make a difference, and right now is the perf
                     <div class="card">
                         <div class="card-body">
                             <figure>
-                                <img class="card-img-top img-fluid" src="img/features/fc3.jpg" alt="Card image cap">
+                                <img class="card-img-top img-fluid" id="clo" src="img/features/fc3.jpg" alt="Card image cap">
                             </figure>
                             <div class="card_inner_body">
-                                <h4 class="card-title">Providing cloth people</h4>
-                                <p class="card-text">
-Instead of throwing away your old clothing, passing them on to the poor is a beneficial way to help others. Many organizations distribute clothing and other amenities to those who are less fortunate.                                </p>
+                                <h4 class="card-titlei" id="clo1"></h4>
+                                <b><p class="card-text" id="clo5"></p></b>
+                                <p class="card-text"id="clo2"></p>
                                 <div class="d-flex justify-content-between raised_goal">
-                                    <p>Raised: $1533</p>
-                                    <p><span>Goal: $2500</span></p>
+                                    <p id="clo3">Raised: $9000</p>
+                                    <p><span id="clo4"></span></p>
                                 </div>
                                 <div class="d-flex justify-content-between donation align-items-center">
-                                    <a href="#" class="primary_btn">donate</a>
-                                    <p><span class="lnr lnr-heart"></span> 90 Donors</p>
+                                    <a href="javascript:Money();" class="primary_btn">donate</a>
+                                    <p><span class="lnr lnr-heart"></span> 83 Donors</p>
                                 </div>
                             </div>
                         </div>
                     </div>
                 </div>
+              </section>
 	<!--================ End Features Cause section =================-->
 
 	<!--================ Start Recent Event Area =================-->
@@ -199,7 +197,7 @@ Instead of throwing away your old clothing, passing them on to the poor is a ben
 			<div class="main_title">
 				<h2>Upcoming events</h2>
 			</div>
-		
+
 			<div class="row">
 				<div class="col-lg-6">
 					<div class="single_event">
@@ -213,7 +211,7 @@ Instead of throwing away your old clothing, passing them on to the poor is a ben
 							<div class="col-lg-6 col-md-6">
 								<div class="content_wrapper">
 									<h3 class="title">
-										<a href="event-details.html">Working syrian childreen</a>
+										<a href="javascript:Events();">Working syrian childreen</a>
 									</h3>
 									<p>
 The conflict in Syria has devastated the lives of a generation of young people. Many of Syria’s children have missed years of their education, with 2.1 million children in Syria currently out of school. 									</p>
@@ -235,7 +233,6 @@ The conflict in Syria has devastated the lives of a generation of young people. 
 											<p>Seconds</p>
 										</div>
 									</div>
-									<a href="#" class="primary_btn">Learn More</a>
 								</div>
 							</div>
 						</div>
@@ -254,7 +251,7 @@ The conflict in Syria has devastated the lives of a generation of young people. 
 							<div class="col-lg-6 col-md-6">
 								<div class="content_wrapper">
 									<h3 class="title">
-										<a href="event-details.html">Help the homeless</a>
+										<a href="javascript:Events();">Help the homeless</a>
 									</h3>
 									<p>
 Volunteers help our residents along their journey of recovery by tutoring them as they work toward educational or vocational goals, or by teaching a special skill.									</p>
@@ -276,7 +273,6 @@ Volunteers help our residents along their journey of recovery by tutoring them a
 											<p>Seconds</p>
 										</div>
 									</div>
-									<a href="#" class="primary_btn">Learn More</a>
 								</div>
 							</div>
 						</div>
@@ -295,7 +291,7 @@ Volunteers help our residents along their journey of recovery by tutoring them a
 							<div class="col-lg-6 col-md-6">
 								<div class="content_wrapper">
 									<h3 class="title">
-										<a href="event-details.html">keep the clean water</a>
+										<a href="javascript:Events();">keep the clean water</a>
 									</h3>
 									<p>
 Next to air, water is the most important element for the preservation of life. Water is a finite commodity which, if not managed properly, will result in shortages in the near future									</p>
@@ -317,7 +313,6 @@ Next to air, water is the most important element for the preservation of life. W
 											<p>Seconds</p>
 										</div>
 									</div>
-									<a href="#" class="primary_btn">Learn More</a>
 								</div>
 							</div>
 						</div>
@@ -336,10 +331,10 @@ Next to air, water is the most important element for the preservation of life. W
 							<div class="col-lg-6 col-md-6">
 								<div class="content_wrapper">
 									<h3 class="title">
-										<a href="event-details.html">Foods for poor children</a>
+										<a href="javascript:Events();">Foods for poor children</a>
 									</h3>
 									<p>
-Hunger is a huge problem that has ramifications far beyond basic survival. Your donation  nutrition program can change the direction of a child’s life. 
+Hunger is a huge problem that has ramifications far beyond basic survival. Your donation  nutrition program can change the direction of a child’s life.
 									</p>
 									<div class="d-flex count_time" id="clockdiv4">
 										<div class="mr-25">
@@ -359,7 +354,6 @@ Hunger is a huge problem that has ramifications far beyond basic survival. Your 
 											<p>Seconds</p>
 										</div>
 									</div>
-									<a href="#" class="primary_btn">Learn More</a>
 								</div>
 							</div>
 						</div>
@@ -370,65 +364,6 @@ Hunger is a huge problem that has ramifications far beyond basic survival. Your 
 	</section>
 	<!--================ End Recent Event Area =================-->
 
-	<!--================Team Area =================-->
-	<section class="team_area section_gap">
-		<div class="container">
-			<div class="main_title">
-				<h2>Meet our volunteer</h2>
-			</div>
-			<div class="row team_inner">
-				<div class="col-lg-3 col-md-6">
-					<div class="team_item">
-						
-					</div>
-				</div>
-
-				<div class="col-lg-3 col-md-6">
-					<div class="team_item">
-						<div class="team_img">
-							<img class="img-fluid" src="img/voluteer/v2.jpg" alt="">
-						</div>
-						<div class="team_name">
-							<h4>Adam Virland</h4>
-							<p>Party Manager</p>
-							<p class="mt-20">
-								So seed seed green that winged cattle in kath  moved us land years living.
-							</p>
-							<div class="social">
-								<a href="#"><i class="fa fa-facebook"></i></a>
-								<a href="#" class="active"><i class="fa fa-twitter"></i></a>
-								<a href="#"><i class="fa fa-instagram"></i></a>
-								<a href="#"><i class="fa fa-envelope-o"></i></a>
-							</div>
-						</div>
-					</div>
-				</div>
-
-				<div class="col-lg-3 col-md-6">
-					<div class="team_item">
-						<div class="team_img">
-							<img class="img-fluid" src="img/voluteer/v3.jpg" alt="">
-						</div>
-						<div class="team_name">
-							<h4>Adam Virland</h4>
-							<p>Party Manager</p>
-							<p class="mt-20">
-								So seed seed green that winged cattle in kath  moved us land years living.
-							</p>
-							<div class="social">
-								<a href="#"><i class="fa fa-facebook"></i></a>
-								<a href="#" class="active"><i class="fa fa-twitter"></i></a>
-								<a href="#"><i class="fa fa-instagram"></i></a>
-								<a href="#"><i class="fa fa-envelope-o"></i></a>
-							</div>
-						</div>
-					</div>
-				</div>
-</div>
-			</div>
-		</div>
-	</section>
-	<!--================End Team Area =================-->
 
 	<!--================ Start CTA Area =================-->
 	<div class="cta-area section_gap overlay"  style="background-color: #60bc0f; ">
@@ -444,11 +379,6 @@ The Youth  Cafe is currently looking for cross-section of volunteers just like y
         </div>
     </div>
 	<!--================ End CTA Area =================-->
-
-	
-				
-	<!--================ End Story Area =================-->
-
 	<!--================ Start Subscribe Area =================-->
 	<div class="container">
 		<div class="subscribe_area">
@@ -460,8 +390,8 @@ The Youth  Cafe is currently looking for cross-section of volunteers just like y
 							<form target="_blank" action="https://spondonit.us12.list-manage.com/subscribe/post?u=1462626880ade1ac87bd9c93a&amp;id=92a4423d01" method="get" class="subscribe_form relative">
 								<div class="input-group d-flex flex-row">
 									<input name="EMAIL" placeholder="Your email address" onfocus="this.placeholder = ''" onblur="this.placeholder = 'Email Address '" required="" type="email">
-									<button class="ml-10 primary_btn yellow_btn btn sub-btn rounded">SUBSCRIBE</button>		
-								</div>									
+									<button class="ml-10 primary_btn yellow_btn btn sub-btn rounded">SUBSCRIBE</button>
+								</div>
 								<div class="info"></div>
 							</form>
 						</div>
@@ -471,8 +401,8 @@ The Youth  Cafe is currently looking for cross-section of volunteers just like y
 		</div>
 	</div>
 	<!--================ End Subscribe Area =================-->
-        
-	<!--================ Start footer Area  =================-->	
+
+	<!--================ Start footer Area  =================-->
 	<footer>
         <div class="footer-area ">
             <div class="container">
@@ -484,8 +414,8 @@ The Youth  Cafe is currently looking for cross-section of volunteers just like y
                                 Make a better life for all needed people ,eliminate poverty ,and help every child in the world to have the life he deserve .
                             </p>
                             <p>
-                                with us there is no need to be afraid of any wasting of your money and you can track every piaster you Spend 
-                                
+                                with us there is no need to be afraid of any wasting of your money and you can track every piaster you Spend
+
                             </p>
                         </div>
                     </div>
@@ -493,12 +423,10 @@ The Youth  Cafe is currently looking for cross-section of volunteers just like y
                         <div class="single-footer-widget tp_widgets">
                             <h4 class="footer_title">Quick Links</h4>
                             <ul class="list">
-                                <li><a href="#">Home</a></li>
-                                <li><a href="#">About</a></li>
-                                <li><a href="#">Causes</a></li>
-                                <li><a href="#">Event</a></li>
-                                <li><a href="#">News</a></li>
-                                <li><a href="#">Contact</a></li>
+                                <li><a href="index.html">Home</a></li>
+                                <li><a href="about-us.html">About</a></li>
+                                <li><a href="javascript:Project();">Projects</a></li>
+                                <li><a href="javascript:Events();">Event</a></li>
                             </ul>
                         </div>
                     </div>
@@ -524,23 +452,21 @@ The Youth  Cafe is currently looking for cross-section of volunteers just like y
                                     Head Office
                                 </p>
                                 <p> 6 October, El Hosary</p>
-    
+
                                 <p class="sm-head">
                                     <span class="fa fa-phone"></span>
                                     Phone Number
                                 </p>
                                 <p>
                                     +123 456 7890 <br>
-                                    +123 456 7890
                                 </p>
-    
+
                                 <p class="sm-head">
                                     <span class="fa fa-envelope"></span>
                                     Email
                                 </p>
                                 <p>
-                                    mail@infoexample.com <br>
-                                    
+                                    blocktrack35@gmail.com <br>
                                 </p>
                             </div>
                         </div>
@@ -553,15 +479,17 @@ The Youth  Cafe is currently looking for cross-section of volunteers just like y
             <div class="container">
                 <div class="row d-flex">
                     <p class="col-lg-12 footer-text text-center">
-                       
+
                 </div>
             </div>
         </div>
     </footer>
 	<!--================ End footer Area  =================-->
-	
-	
+
+
 	<!-- Optional JavaScript -->
+  <script src="js/CheckLogin.js"></script>
+  <script type="text/javascript" src="js/Projects.js"></script>
 	<!-- jQuery first, then Popper.js, then Bootstrap JS -->
 	<script src="js/jquery-3.2.1.min.js"></script>
 	<script src="js/popper.js"></script>
