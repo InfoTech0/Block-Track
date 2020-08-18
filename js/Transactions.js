@@ -2,6 +2,8 @@
         var data; var  data1;
         function getData(){
         var	email = document.getElementById("Email").value.toLowerCase();
+        var em=localStorage.getItem('Email');
+        if (email==em) {
         var filter=encodeURIComponent("resource:org.block.track.net.Doner#"+email);
         const xhr = new XMLHttpRequest(),
            method = "GET",
@@ -18,6 +20,10 @@
           };
           xhr.send();
         }
+      else {
+        alert("Enter Your Email!");
+      }
+    }
 function getData2(data){
   var transaction=[];
   for (var i = 0; i < data.length; i++) {
